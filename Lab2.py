@@ -38,12 +38,14 @@ gpio.add_event_detect(
   gpio.RISING,
   callback=myCallback,
   bouncetime=100)
-
-while True:             # continuous loop
-  gpio.output(p3, 0)     # set output to 0V
-  sleep(1)            # wait 0.5 sec
-  gpio.output(p3, 1)     # set output to 3.3V
-  sleep(1)   
+try:
+  while True:             # continuous loop
+    gpio.output(p3, 0)     # set output to 0V
+    sleep(1)            # wait 0.5 sec
+    gpio.output(p3, 1)     # set output to 3.3V
+    sleep(1)   
+except KeyboardInterrupt:
+  print('\nExiting')
 
 gpio.cleanup()
 
