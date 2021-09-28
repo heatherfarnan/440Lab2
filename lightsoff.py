@@ -12,3 +12,5 @@ try
   gpio.output(p3, 0)
 except KeyboardInterrupt:
   print('\nExiting')
+
+gpio.cleanup()
