@@ -26,15 +26,15 @@ def myCallback(pin):
     gpio.output(p2,1)
 
 gpio.add_event_detect(
-  in1
-  gpio.RISING
-  callback=myCallback
+  in1,
+  gpio.RISING,
+  callback=myCallback,
   bouncetime=100)
 
 gpio.add_event_detect(
-  in2
-  gpio.RISING
-  callback=myCallback
+  in2,
+  gpio.RISING,
+  callback=myCallback,
   bouncetime=100)
 
 while True:             # continuous loop
