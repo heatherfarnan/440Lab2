@@ -18,20 +18,20 @@ gpio.setup(p1, gpio.OUT)
 gpio.setup(p2, gpio.OUT)
 gpio.setup(p3, gpio.OUT)
 
+
+def myCallback(pin):
+  while(GPIO.input(in1)==1):  
+    GPIO.output(P1,1)
+  while(GPIO.input(in2)==1):  
+    GPIO.output(P2,1)
+
+gpio.add_event_detect(in1, gpio.RISING, callback=myCallback, bouncetime=1000)
+
 while True:             # continuous loop
   GPIO.output(p3, 0)     # set output to 0V
   sleep(0.5)            # wait 0.5 sec
   GPIO.output(p3, 1)     # set output to 3.3V
-  sleep(0.5)            # wait 0.5 sec
+  sleep(0.5)   
 
-def myCallback(pin):
-  p1 = 1
-
-gpio.add_event_detect(in1, gpio.RISING, callback=myCallback, bouncetime=100)
-  
 gpio.cleanup()
-
-GPIO.setmode(GPIO.BCM)  # use BCM port numbering
-p = 4                   # pin number
-GPIO.setup(p, GPIO.OUT) # assign the pin as output
 
