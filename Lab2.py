@@ -18,8 +18,8 @@ gpio.setup(p1, gpio.OUT)
 gpio.setup(p2, gpio.OUT)
 gpio.setup(p3, gpio.OUT)
 
-pwm1 = gpio.PWM(p1,100)
-pwm2 = gpio.PWM(p2,100)
+pwm1 = gpio.PWM(p1,50)
+pwm2 = gpio.PWM(p2,50)
 
 x = 0
 
@@ -62,9 +62,9 @@ gpio.add_event_detect(
 try:
   while True:             # continuous loop
     gpio.output(p3, 0)     # set output to 0V
-    sleep(1)            # wait 0.5 sec
+    sleep(.5)            # wait 0.5 sec
     gpio.output(p3, 1)     # set output to 3.3V
-    sleep(1)   
+    sleep(.5)   
 except KeyboardInterrupt:
   print('\nExiting')
 
