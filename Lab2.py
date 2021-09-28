@@ -11,7 +11,7 @@ gpio.setup(in2, gpio.IN, pull_up_down=gpio.PUD_DOWN)
 
 
 p1 = 26
-p2 = 5
+p2 = 4
 p3 = 21
 
 
