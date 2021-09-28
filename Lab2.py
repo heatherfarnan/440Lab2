@@ -19,7 +19,7 @@ gpio.setup(p2, gpio.OUT)
 gpio.setup(p3, gpio.OUT)
 
 pwm1 = gpio.PWM(p1,100)
-#pwm2 = gpio.PWM(p2,1)
+pwm2 = gpio.PWM(p2,100)
 
 x = 0
 
@@ -37,7 +37,13 @@ def myCallback(pin):
       sleep(.01)
 
   while gpio.input(in2)==1:
-    gpio.output(p2,1)
+    pwm2.start(0)
+    for dc21 in range(101):
+      pwm1.ChangeDutyCycle(dc11)
+      sleep(.01)
+    for dc22 in range(100,-1,-1):
+      pwm2.ChangeDutyCycle(dc12)
+      sleep(.01)
 
 gpio.add_event_detect(
   in1,
