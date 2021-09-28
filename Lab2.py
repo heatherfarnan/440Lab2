@@ -29,10 +29,8 @@ def myCallback(pin):
     pwm1.start(0)
     for dc1 in range(101):
       pwm1.ChangeDutyCycle(dc1)
-      sleep(.01)
     for dc1 in range(100,-1,-1):
       pwm1.ChangeDutyCycle(dc1)
-      sleep(.01)
 
   while gpio.input(in2)==1:
     gpio.output(p2,1)
