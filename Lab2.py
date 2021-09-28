@@ -34,5 +34,5 @@ try:
 except KeyboardInterrupt:       # stop gracefully on ctrl-C
   print('\nExiting')
 
-pwm.stop()
+pwm1.stop()
 gpio.cleanup()
