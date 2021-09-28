@@ -23,7 +23,7 @@ gpio.setup(p3, gpio.OUT)
 
 pwm = gpio.PWM(p1, 100)          # create PWM object @ 100 Hz
 
-if in1 == 1:
+while in1 == 1:
   try:
     pwm.start(0)                  # initiate PWM at 0% duty cycle
     while 1:
