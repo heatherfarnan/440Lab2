@@ -20,17 +20,17 @@ gpio.setup(p3, gpio.OUT)
 
 
 def myCallback(pin):
-  while(GPIO.input(in1)==1):  
-    GPIO.output(P1,1)
-  while(GPIO.input(in2)==1):  
-    GPIO.output(P2,1)
+  while(gpio.input(in1)==1):  
+    gpio.output(P1,1)
+  while(gpio.input(in2)==1):  
+    gpio.output(P2,1)
 
 gpio.add_event_detect(in1, gpio.RISING, callback=myCallback, bouncetime=1000)
 
 while True:             # continuous loop
-  GPIO.output(p3, 0)     # set output to 0V
+  gpio.output(p3, 0)     # set output to 0V
   sleep(0.5)            # wait 0.5 sec
-  GPIO.output(p3, 1)     # set output to 3.3V
+  gpio.output(p3, 1)     # set output to 3.3V
   sleep(0.5)   
 
 gpio.cleanup()
