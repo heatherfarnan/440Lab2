@@ -20,7 +20,5 @@ def myCallback(pin):
   p1 = 1
 
 gpio.add_event_detect(in1, gpio.RISING, callback=myCallback, bouncetime=100)
-
-try:
   
 gpio.cleanup()
