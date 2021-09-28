@@ -1,4 +1,4 @@
-import RPi.GPIOas gpio
+import RPi.GPIO as gpio
 
 gpio.setmode(gpio.BCM)
 
