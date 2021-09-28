@@ -20,17 +20,17 @@ gpio.setup(p3, gpio.OUT)
 
 
 pwm1 = gpio.PWM(p1, 1)          # create PWM object @ 1 Hz
-pwm2 = gpio.PWM(p1, 1)          # create PWM object @ 1 Hz
-pwm3 = gpio.PWM(p1, 1)          # create PWM object @ 1 Hz
+#pwm2 = gpio.PWM(p1, 1)          # create PWM object @ 1 Hz
+#pwm3 = gpio.PWM(p1, 1)          # create PWM object @ 1 Hz
 
 
 
 try:
   while(in1 == 1):
     for dc1 in range(101):
-      pwm.ChangeDutyCycle(dc1)
+      pwm1.ChangeDutyCycle(dc1)
     for dc1 in range(101,0,-1):
-      pwm.ChangeDutyCycle(dc1)
+      pwm1.ChangeDutyCycle(dc1)
 except KeyboardInterrupt:       # stop gracefully on ctrl-C
   print('\nExiting')
 
