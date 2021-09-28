@@ -39,10 +39,10 @@ def myCallback(pin):
   while gpio.input(in2)==1:
     pwm2.start(0)
     for dc21 in range(101):
-      pwm1.ChangeDutyCycle(dc11)
+      pwm2.ChangeDutyCycle(dc21)
       sleep(.01)
     for dc22 in range(100,-1,-1):
-      pwm2.ChangeDutyCycle(dc12)
+      pwm2.ChangeDutyCycle(dc22)
       sleep(.01)
 
 gpio.add_event_detect(
