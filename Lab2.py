@@ -62,9 +62,9 @@ gpio.add_event_detect(
 try:
   while True:             # continuous loop
     gpio.output(p3, 0)     # set output to 0V
-    sleep(.5)            # wait 0.5 sec
+    sleep(1)            # wait 0.5 sec
     gpio.output(p3, 1)     # set output to 3.3V
-    sleep(.5)   
+    sleep(1)   
 except KeyboardInterrupt:
   print('\nExiting')
 
