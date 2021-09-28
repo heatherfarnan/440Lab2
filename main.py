@@ -23,15 +23,14 @@ gpio.setup(p3, gpio.OUT)
 
 pwm = gpio.PWM(p1, 100)          # create PWM object @ 100 Hz
 
-while in1 == 1:
-  try:
-    pwm.start(0)                  # initiate PWM at 0% duty cycle
-    while 1:
-      for dc in range(101):       # loop duty cycle from 0 to 100  
-        pwm.ChangeDutyCycle(dc)   # set duty cycle  
-        sleep(0.01)               # sleep 10 ms
-  except KeyboardInterrupt:       # stop gracefully on ctrl-C
-    print('\nExiting')
+try:
+  while(in1 == 1):
+    for dc1 in range(101):
+      pwm1.ChangeDutyCycle(dc1)
+    for dc1 in range(101,0,-1):
+      pwm1.ChangeDutyCycle(dc1)
+except KeyboardInterrupt:       # stop gracefully on ctrl-C
+  print('\nExiting')
 
 pwm.stop()
 gpio.cleanup()

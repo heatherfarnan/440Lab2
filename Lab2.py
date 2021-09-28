@@ -15,24 +15,12 @@ p2 = 4
 p3 = 21
 
 gpio.setup(p1, gpio.OUT)
-gpio.setup(p2, gpio.OUT)
-gpio.setup(p3, gpio.OUT)
 
+def myCallback(pin):
+  p1 = 1
 
-pwm1 = gpio.PWM(p1, 1)          # create PWM object @ 1 Hz
-#pwm2 = gpio.PWM(p1, 1)          # create PWM object @ 1 Hz
-#pwm3 = gpio.PWM(p1, 1)          # create PWM object @ 1 Hz
-
-
+gpio.add_event_detect(in1, gpio.RISING, callback=myCallback, bouncetime=100)
 
 try:
-  while(in1 == 1):
-    for dc1 in range(101):
-      pwm1.ChangeDutyCycle(dc1)
-    for dc1 in range(101,0,-1):
-      pwm1.ChangeDutyCycle(dc1)
-except KeyboardInterrupt:       # stop gracefully on ctrl-C
-  print('\nExiting')
-
-pwm1.stop()
+  
 gpio.cleanup()
