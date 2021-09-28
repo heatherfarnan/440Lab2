@@ -45,7 +45,6 @@ gpio.add_event_detect(
   callback=myCallback,
   bouncetime=100,
   x = 1
-  print('x = %d' %x)
   )
 
 gpio.add_event_detect(
@@ -54,9 +53,8 @@ gpio.add_event_detect(
   callback=myCallback,
   bouncetime=100,
   x = 2
-  print('x = %d' %x)
   )
-  
+
 try:
   while True:             # continuous loop
     gpio.output(p3, 0)     # set output to 0V
