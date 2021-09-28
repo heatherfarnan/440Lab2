@@ -21,9 +21,9 @@ gpio.setup(p3, gpio.OUT)
 
 def myCallback(pin):
   while(gpio.input(in1)==1):  
-    gpio.output(P1,1)
+    gpio.output(p1,1)
   while(gpio.input(in2)==1):  
-    gpio.output(P2,1)
+    gpio.output(p2,1)
 
 gpio.add_event_detect(in1, gpio.RISING, callback=myCallback, bouncetime=1000)
 
